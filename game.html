@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUMSS Quiz Game</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:white;
+color:#0a2c5a;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+background:rgba(0,70,150,0.7);
+backdrop-filter:blur(10px);
+color:white;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* GAME */
+
+.game-container{
+max-width:600px;
+margin:60px auto;
+padding:30px;
+border:3px solid #0046a0;
+border-radius:10px;
+transition:0.3s;
+}
+
+.correct{
+background:#c8ffd0;
+}
+
+.wrong{
+background:#ffd0d0;
+}
+
+button{
+display:block;
+width:100%;
+padding:12px;
+margin:10px 0;
+font-size:16px;
+border:none;
+border-radius:6px;
+background:#0046a0;
+color:white;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#0066cc;
+}
+
+#feedback{
+font-weight:bold;
+margin-top:10px;
+}
+
+/* FIREWORKS */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">LCBA HUMSS</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="abouthumss.html">About HUMSS</a>
+<a href="imagegallery.html">Image Gallery</a>
+<a href="videogallery.html">Video Gallery</a>
+</div>
+</div>
+
+<canvas id="fireworks"></canvas>
+
+<div class="game-container" id="gameBox">
+
+<h2>HUMSS Quiz Challenge</h2>
+
+<p id="question"></p>
+
+<div id="answers"></div>
+
+<p id="feedback"></p>
+
+<p id="score">Score: 0</p>
+
+</div>
+
+<script>
+
+const quiz = [
+
+{
+question:"What does HUMSS stand for?",
+answers:[
+"Humanities and Social Sciences",
+"Human Understanding and Media Studies",
+"History and Universal Modern Studies",
+"Human Society Management Studies"
+],
+correct:0
+},
+
+{
+question:"Which career is related to HUMSS?",
+answers:[
+"Engineer",
+"Lawyer",
+"Journalist",
+"Programmer"
+],
+correct:2
+},
+
+{
+question:"Which skill is important in HUMSS?",
+answers:[
+"Communication",
+"Programming",
+"Circuit design",
+"Mechanical repair"
+],
+correct:0
+},
+
+{
+question:"Which subject belongs to HUMSS?",
+answers:[
+"Politics and Governance",
+"Advanced Robotics",
+"Thermodynamics",
+"Network Security"
+],
+correct:0
+},
+
+{
+question:"HUMSS focuses on understanding?",
+answers:[
+"Machines",
+"Human society and behavior",
+"Computer hardware",
+"Industrial production"
+],
+correct:1
+}
+
+];
+
+let currentQuestion=0;
+let score=0;
+
+function loadQuestion(){
+
+const q=quiz[currentQuestion];
+document.getElementById("question").textContent=q.question;
+
+const answersDiv=document.getElementById("answers");
+answersDiv.innerHTML="";
+document.getElementById("feedback").textContent="";
+
+q.answers.forEach((answer,index)=>{
+
+const btn=document.createElement("button");
+btn.textContent=answer;
+
+btn.onclick=()=>checkAnswer(index);
+
+answersDiv.appendChild(btn);
+
+});
+
+}
+
+function checkAnswer(index){
+
+const q=quiz[currentQuestion];
+const box=document.getElementById("gameBox");
+
+if(index===q.correct){
+
+score++;
+box.classList.remove("wrong");
+box.classList.add("correct");
+
+document.getElementById("feedback").textContent="Correct! 🎉";
+
+}else{
+
+box.classList.remove("correct");
+box.classList.add("wrong");
+
+document.getElementById("feedback").textContent=
+"Wrong! Correct answer: "+q.answers[q.correct];
+
+}
+
+document.getElementById("score").textContent="Score: "+score;
+
+setTimeout(()=>{
+
+currentQuestion++;
+
+box.classList.remove("correct","wrong");
+
+if(currentQuestion<quiz.length){
+loadQuestion();
+}else{
+endGame();
+}
+
+},1500);
+
+}
+
+function endGame(){
+
+document.getElementById("gameBox").innerHTML=
+"<h2>You finished the game!</h2><p>Your Score: "+score+"/"+quiz.length+"</p>";
+
+if(score>=4){
+startFireworks();
+}
+
+}
+
+/* FIREWORKS */
+
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+function startFireworks(){
+
+setInterval(()=>{
+
+for(let i=0;i<20;i++){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+radius:2+Math.random()*3,
+dx:(Math.random()-0.5)*5,
+dy:(Math.random()-0.5)*5,
+life:100
+});
+
+}
+
+},500);
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach((p,i)=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+ctx.fillStyle="blue";
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+p.life--;
+
+if(p.life<=0){
+particles.splice(i,1);
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUMSS Strand - LCBA</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:white;
+color:#0a2c5a;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+
+background:rgba(0,70,150,0.7);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+
+z-index:1000;
+}
+
+.logo{
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:16px;
+padding:8px 12px;
+}
+
+.nav-links a:hover{
+background:white;
+color:#0046a0;
+border-radius:5px;
+}
+
+/* HERO */
+
+.hero{
+height:400px;
+background:linear-gradient(rgba(0,70,150,0.7),rgba(0,70,150,0.7)),
+url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:48px;
+margin:0;
+}
+
+/* CONTENT */
+
+.section{
+padding:60px 80px;
+text-align:center;
+}
+
+.section h2{
+color:#0046a0;
+margin-bottom:20px;
+}
+
+.card-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+}
+
+.card{
+width:250px;
+padding:25px;
+border:2px solid #0046a0;
+border-radius:10px;
+}
+
+.card h3{
+color:#0046a0;
+}
+
+ /* Base Button Styling */
+    .btn {
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-family: sans-serif;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    /* Solid Blue Button */
+    .btn-solid {
+        background-color: #2563eb; /* Vibrant Blue */
+        color: #ffffff;
+        border: 2px solid #2563eb;
+    }
+
+    .btn-solid:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-2px);
+    }
+
+    /* Blue Outline Button */
+    .btn-outline {
+        background-color: #ffffff;
+        color: #2563eb;
+        border: 2px solid #2563eb;
+    }
+
+    .btn-outline:hover {
+        background-color: #eff6ff;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<div class="navbar">
+
+<div class="logo">
+LCBA HUMSS
+</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="imagegallery.html">Image Gallery</a>
+<a href="videogallery.html">Video Gallery</a>
+<a href="game.html">Humss Game</a>
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<div class="hero">
+<div>
+<h1>HUMSS Strand</h1>
+<p>Humanities and Social Sciences</p>
+<a href="imagegallery.html" class="btn btn-solid">Image Gallery</a>
+</div>
+</div>
+
+<!-- ABOUT -->
+
+<div class="section">
+
+<h2>About HUMSS</h2>
+
+<p>
+The Humanities and Social Sciences (HUMSS) strand focuses on the study of
+human behavior, society, culture, politics, and communication. It prepares
+students for careers in fields that involve working with people, understanding
+social issues, and developing communication and critical thinking skills.
+</p>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Skills Developed</h3>
+<p>
+Students improve their communication, research,
+critical thinking, and leadership skills.
+</p>
+</div>
+
+<div class="card">
+<h3>Possible Careers</h3>
+<p>
+Lawyer, Teacher, Journalist, Psychologist,
+Politician, Social Worker, and Public Speaker.
+</p>
+</div>
+
+<div class="card">
+<h3>Subjects</h3>
+<p>
+Creative Writing, Politics and Governance,
+World Religions, Philippine Culture,
+and Social Sciences.
+</p>
+</div>
+
+<div class="card">
+<h3>Purpose</h3>
+<p>
+The HUMSS strand prepares students for college
+programs related to humanities, education,
+law, communication, and social sciences.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

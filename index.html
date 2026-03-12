@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LCBA - Laguna College of Business and Arts</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:white;
+color:#0a2c5a;
+}
+
+/* NAVIGATION BAR */
+
+.navbar{
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+
+background:rgba(0,70,150,0.7);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+
+z-index:1000;
+}
+
+.logo{
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:16px;
+padding:8px 12px;
+}
+
+.nav-links a:hover{
+background:white;
+color:#0046a0;
+border-radius:5px;
+}
+
+/* HERO */
+
+.hero{
+height:450px;
+background:linear-gradient(rgba(0,70,150,0.6),rgba(0,70,150,0.6)),
+url(./assets/images/bg.jpg);
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+color:white;
+}
+
+.hero h1{
+font-size:50px;
+margin:0;
+}
+
+/* CONTENT */
+
+.section{
+padding:60px 100px;
+text-align:center;
+}
+
+.section h2{
+color:#0046a0;
+margin-bottom:20px;
+}
+
+.card-container{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
+}
+
+.card{
+width:250px;
+padding:25px;
+border:2px solid #0046a0;
+border-radius:10px;
+}
+
+.card h3{
+color:#0046a0;
+}
+
+ /* Base Button Styling */
+    .btn {
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-family: sans-serif;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    /* Solid Blue Button */
+    .btn-solid {
+        background-color: #2563eb; /* Vibrant Blue */
+        color: #ffffff;
+        border: 2px solid #2563eb;
+    }
+
+    .btn-solid:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-2px);
+    }
+
+    /* Blue Outline Button */
+    .btn-outline {
+        background-color: #ffffff;
+        color: #2563eb;
+        border: 2px solid #2563eb;
+    }
+
+    .btn-outline:hover {
+        background-color: #eff6ff;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">
+LCBA
+</div>
+
+<div class="nav-links">
+
+<a href="abouthumss.html">About Humss</a>
+<a href="imagegallery.html">Image Gallery</a>
+<a href="videogallery.html">Video Gallery</a>
+<a href="game.html">Humss Game</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<div class="hero">
+<div>
+<h1>Laguna College of Business and Arts</h1>
+<p>Excellence • Leadership • Innovation</p>
+<a href="abouthumss.html" class="btn btn-solid">About Humss</a>
+</div>
+</div>
+
+<!-- INFO SECTION -->
+
+<div class="section">
+
+<h2>About LCBA</h2>
+
+<p>
+Laguna College of Business and Arts (LCBA) is a respected educational
+institution in Laguna dedicated to providing quality education that
+develops intellectual competence, leadership, and social responsibility.
+The college prepares students to become professionals who contribute
+positively to society.
+</p>
+<h2>FOUNDER</h2>
+<img src="./assets/images/Founder.jpg" height="200" width="300" alt="FOUNDER"> <br><br>
+Pedro Evangelista Llamas (1884–1950) was a dedicated educator and public servant from Pagsanjan, Laguna,
+ who leveraged his international education from Hong Kong and the University of Michigan to transform 
+ his community. After serving a popular term as Municipal President of Pagsanjan (1916–1920), he 
+ shifted his focus to addressing the region's educational gaps by founding the Pagsanjan Academy 
+ in 1923 and the Laguna Institute in 1930. The latter was a landmark achievement, providing Calamba 
+ with its first secondary school and offering a local alternative to distant institutions in Manila 
+ or Los Baños. Despite the disruptions of World War II, Llamas’s vision endured, as the 
+ Laguna Institute survived the conflict and reopened in 1950, cementing his legacy as a pillar of 
+ Laguna’s academic development.
+<div class="card-container">
+
+<div class="card">
+<h3>Vision</h3>
+<p>
+LCBA envisions to become an autonomous higher education 
+institution committed to producing holistically developed 
+globally competitive lifelong learners.
+</p>
+</div>
+
+<div class="card">
+<h3>Philosophy</h3>
+<p>
+Inspired by Dr. Jose Rizal’s educational principles,
+LCBA Education upholds a balanced curriculum towards 
+development for a better quality of life.
+</p>
+</div>
+
+<div class="card">
+<h3>Mission</h3>
+<p>
+LCBA commits itself to the total human development of the learners through 
+value-laden and competency-based education, policy-relevant research, and 
+sustainable community involvement.
+</p>
+</div>
+
+<div class="card">
+<h3>Core Values</h3>
+<p>
+        INTEGRITY <br>
+               This means doing the right thing even when no one is looking. <br><br>
+
+        POSITIVITY <br>
+               This is finding the good in everything. <br><br>
+
+        MINDFULNESS <br>
+               This is means respecting and accepting individual differences. <br><br>
+
+        EXCELLENCE <br>
+               This is exemplofying proper attitude, skill, and knowledge. 
+</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

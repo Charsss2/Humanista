@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUMSS Video Gallery</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:white;
+color:#0a2c5a;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+background:rgba(0,70,150,0.7);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+padding:8px 12px;
+}
+
+.nav-links a:hover{
+background:white;
+color:#0046a0;
+border-radius:5px;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+padding:40px;
+}
+
+.title h1{
+color:#0046a0;
+}
+
+/* VIDEO GRID */
+
+.video-gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+gap:30px;
+padding:40px;
+}
+
+.video{
+border:3px solid #0046a0;
+border-radius:10px;
+overflow:hidden;
+}
+
+.video iframe{
+width:100%;
+height:200px;
+border:none;
+}
+
+/* Base Button Styling */
+    .btn {
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-family: sans-serif;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    /* Solid Blue Button */
+    .btn-solid {
+        background-color: #2563eb; /* Vibrant Blue */
+        color: #ffffff;
+        border: 2px solid #2563eb;
+    }
+
+    .btn-solid:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-2px);
+    }
+
+    /* Blue Outline Button */
+    .btn-outline {
+        background-color: #ffffff;
+        color: #2563eb;
+        border: 2px solid #2563eb;
+    }
+
+    .btn-outline:hover {
+        background-color: #eff6ff;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">
+LCBA HUMSS
+</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="abouthumss.html">About HUMSS</a>
+<a href="imagegallery.html">Image Gallery</a>
+<a href="game.html">Humss Game</a>
+</div>
+
+</div>
+
+<!-- TITLE -->
+
+<div class="title">
+<h1>HUMSS Video Gallery</h1>
+<p>Educational and activity videos related to the HUMSS strand</p>
+<a href="game.html" class="btn btn-solid">Game</a>
+</div>
+
+<!-- VIDEOS -->
+
+<div class="video-gallery">
+
+<div class="video">
+<iframe src="assets/videos/vid1.mp4" allowfullscreen></iframe>
+</div>
+
+<div class="video">
+<iframe src="assets/videos/vid3.mp4" allowfullscreen></iframe>
+</div>
+
+<div class="video">
+<iframe src="assets/videos/vid2.mp4" allowfullscreen></iframe>
+</div>
+
+</div>
+
+</body>
+</html>
